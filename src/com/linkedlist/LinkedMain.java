@@ -17,7 +17,25 @@ public class LinkedMain {
 		}
 	}
 	
+	public static void AddThreeNumbers() {
+		MyNode<Integer> firstNode = new MyNode<>(70);
+		MyNode<Integer> secondNode = new MyNode<>(30);
+		MyNode<Integer> thirdNode = new MyNode<>(56);
+		
+		LinkedListTE<Integer> Linkedlist = new LinkedListTE<>();
+		Linkedlist.add(firstNode);
+		Linkedlist.add(secondNode);
+		Linkedlist.add(thirdNode);
+		if(Linkedlist.head.equals(thirdNode) && Linkedlist.head.getNext().equals(secondNode) && Linkedlist.tail.equals(firstNode)){
+			Linkedlist.printMyNodes();	
+		}else {
+			System.out.println("False");
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		createLinkedList();
+		AddThreeNumbers();
 	}
 }
