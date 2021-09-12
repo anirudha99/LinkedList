@@ -60,6 +60,9 @@ public class LinkedMain {
 		
 	}
 	
+	/**
+	 * To insert the element in between linked list
+	 */
 	public static void insertBtwPosition() {
 		MyNode<Integer> firstNode = new MyNode<>(56);
 		MyNode<Integer> secondNode = new MyNode<>(30);
@@ -77,10 +80,29 @@ public class LinkedMain {
 		
 	}
 	
+	/**
+	 * To delete the first node
+	 */
+	public static void deleteFirstNode() {
+		MyNode<Integer> firstNode = new MyNode<>(56);
+		MyNode<Integer> secondNode = new MyNode<>(30);
+		MyNode<Integer> thirdNode = new MyNode<>(70);
+		
+		LinkedListTE<Integer> Linkedlist = new LinkedListTE<>();
+		Linkedlist.add(firstNode);
+		Linkedlist.add(secondNode);
+		Linkedlist.add(thirdNode);
+		INode<Integer> temp = Linkedlist.pop();
+		System.out.println(temp.getKey()+" has been deleted");
+		Linkedlist.printMyNodes();
+		
+	}
+	
 	public static void main(String[] args) {
 		createLinkedList();
 		AddThreeNumbers();
 		AppendThreeNumbers();
 		insertBtwPosition();
+		deleteFirstNode();
 	}
 }
