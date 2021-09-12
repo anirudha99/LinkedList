@@ -62,6 +62,17 @@ public class LinkedListTE<K> {
 		this.head = head.getNext();
 		return tempNode;
 	}
+	
+	public INode<K> delete() {
+		INode<K> curNode = head;
+		INode<K> prevNode = null;
+		while(curNode != null && curNode.getNext() != null) {
+			prevNode = curNode;
+			curNode = curNode.getNext();
+		}
+		prevNode.setNext(null);
+		return curNode;
+	}
 
 	public void printMyNodes() {
 		System.out.println("My Nodes: "+head);
