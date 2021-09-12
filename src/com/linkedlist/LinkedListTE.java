@@ -63,6 +63,9 @@ public class LinkedListTE<K> {
 		return tempNode;
 	}
 	
+	/**
+	 * @return last item
+	 */
 	public INode<K> delete() {
 		INode<K> curNode = head;
 		INode<K> prevNode = null;
@@ -72,6 +75,21 @@ public class LinkedListTE<K> {
 		}
 		prevNode.setNext(null);
 		return curNode;
+	}
+	
+	/**
+	 * @param Key
+	 * @return node if found
+	 */
+	public INode<K> search(K Key) {
+		INode<K> tempNode = head;
+		while(tempNode != null && tempNode.getNext() != null) {
+			if (tempNode.getKey().equals(Key)){
+				return tempNode;
+			}
+			tempNode = tempNode.getNext();
+		}
+		return null;
 	}
 
 	public void printMyNodes() {
