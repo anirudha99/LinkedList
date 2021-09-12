@@ -91,6 +91,42 @@ public class LinkedListTE<K> {
 		}
 		return null;
 	}
+	
+	public INode<K> deleteSpecified(K Key) {
+		if(head == null || head.getNext() == null) {
+			return null;
+		}
+		INode<K> curNode = this.head;
+		INode<K> prevNode = null;
+
+		while(curNode != null && curNode.getKey() != Key) {
+			prevNode = curNode;
+			curNode = curNode.getNext();
+		}
+
+		if(curNode == null) {
+			System.out.println("key not found");
+			return head;
+		}
+	    System.out.println(curNode.getKey()+" deleted");
+		prevNode.setNext(curNode.getNext());
+		return head;
+	}
+	
+	public int countNode(INode<K> head) {
+		INode<K> tempNode = head;
+		if(tempNode == null)
+			return 0;
+		if(tempNode.getNext() == null)
+			return 1;
+		int count = 1;
+		while(tempNode != null && tempNode.getNext() != null) {
+			tempNode = tempNode.getNext();
+			count++;
+		}
+		return count;
+
+	}
 
 	public void printMyNodes() {
 		System.out.println("My Nodes: "+head);

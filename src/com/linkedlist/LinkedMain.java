@@ -159,6 +159,26 @@ public class LinkedMain {
 		Linkedlist.printMyNodes();
 	}
 	
+	/**
+	 * To delete after specified node position
+	 */
+	public static void deleteafterSpecifiedNode() {
+		MyNode<Integer> firstNode = new MyNode<>(56);
+		MyNode<Integer> secondNode = new MyNode<>(30);
+		MyNode<Integer> thirdNode = new MyNode<>(70);
+		MyNode<Integer> fourthNode = new MyNode<>(40);
+
+		LinkedListTE<Integer> Linkedlist = new LinkedListTE<Integer>();
+		Linkedlist.add(firstNode);
+		Linkedlist.append(secondNode);
+		Linkedlist.append(thirdNode);
+		Linkedlist.append(fourthNode);
+		INode<Integer> head = Linkedlist.deleteSpecified(40);
+		int count = Linkedlist.countNode(head);
+		System.out.println("Number of nodes in a linked list are "+count);
+		Linkedlist.printMyNodes();
+	}
+	
 	
 	
 	public static void main(String[] args) {
@@ -170,5 +190,6 @@ public class LinkedMain {
 		deleteLastElement();
 		searchElement();
 		addafterSpecifiedNode();
+		deleteafterSpecifiedNode();
 	}
 }
