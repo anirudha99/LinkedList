@@ -2,6 +2,9 @@ package com.linkedlist;
 
 public class LinkedMain {
 	
+	/**
+	 * To create the linked list
+	 */
 	public static void createLinkedList() {
 		MyNode<Integer> firstNode = new MyNode<>(56);
 		MyNode<Integer> secondNode = new MyNode<>(30);
@@ -17,6 +20,9 @@ public class LinkedMain {
 		}
 	}
 	
+	/**
+	 * To add 3 nodes to the top of linked list
+	 */
 	public static void AddThreeNumbers() {
 		MyNode<Integer> firstNode = new MyNode<>(70);
 		MyNode<Integer> secondNode = new MyNode<>(30);
@@ -34,8 +40,29 @@ public class LinkedMain {
 		
 	}
 	
+	/**
+	 * To append  element to the last of linked list
+	 */
+	public static void AppendThreeNumbers() {
+		MyNode<Integer> firstNode = new MyNode<>(56);
+		MyNode<Integer> secondNode = new MyNode<>(30);
+		MyNode<Integer> thirdNode = new MyNode<>(70);
+		
+		LinkedListTE<Integer> Linkedlist = new LinkedListTE<>();
+		Linkedlist.add(firstNode);
+		Linkedlist.append(secondNode);
+		Linkedlist.append(thirdNode);
+		if(Linkedlist.head.equals(firstNode) && Linkedlist.head.getNext().equals(secondNode) && Linkedlist.tail.equals(thirdNode)){
+			Linkedlist.printMyNodes();	
+		}else {
+			System.out.println("Error");
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		createLinkedList();
 		AddThreeNumbers();
+		AppendThreeNumbers();
 	}
 }
