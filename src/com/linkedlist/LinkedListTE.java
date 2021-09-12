@@ -10,6 +10,9 @@ public class LinkedListTE<K> {
 		this.tail = null;	
 	}
 	
+	/**
+	 * @param newNode
+	 */
 	public void add(INode<K> newNode) {
 		if(this.tail == null) {
 			this.tail = newNode;
@@ -24,6 +27,9 @@ public class LinkedListTE<K> {
 		}
 	}
 	
+	/**
+	 * @param newNode
+	 */
 	public void append(INode<K> newNode) {
 		if(this.head == null) {
 			this.head = newNode;
@@ -38,10 +44,23 @@ public class LinkedListTE<K> {
 		}
 	}
 	
+	/**
+	 * @param myNode
+	 * @param newNode
+	 */
 	public void insert(INode<K> myNode,INode<K> newNode) {
 		INode<K> tempNode = myNode.getNext();
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
+	}
+	
+	/**
+	 * @return first item
+	 */
+	public INode<K> pop(){
+		INode<K> tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
 	}
 
 	public void printMyNodes() {
