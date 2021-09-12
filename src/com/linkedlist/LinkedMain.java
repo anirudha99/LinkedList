@@ -98,6 +98,9 @@ public class LinkedMain {
 		
 	}
 	
+	/**
+	 * To delete last node
+	 */
 	public static void deleteLastElement() {
 		MyNode<Integer> firstNode = new MyNode<>(70);
 		MyNode<Integer> secondNode = new MyNode<>(30);
@@ -112,6 +115,26 @@ public class LinkedMain {
 		Linkedlist.printMyNodes();
 	}
 	
+	/**
+	 * To search the node
+	 */
+	public static void searchElement() {
+		MyNode<Integer> firstNode = new MyNode<>(70);
+		MyNode<Integer> secondNode = new MyNode<>(30);
+		MyNode<Integer> thirdNode = new MyNode<>(56);
+
+		LinkedListTE<Integer> Linkedlist = new LinkedListTE<>();
+		Linkedlist.add(firstNode);
+		Linkedlist.add(secondNode);
+		Linkedlist.add(thirdNode);
+		INode<Integer> result = Linkedlist.search(56);
+		if(result == null)
+			System.out.println("Element not found");
+		else
+			System.out.println(result.getKey()+" found !!Search is successfull");
+		Linkedlist.printMyNodes();
+	}
+	
 	public static void main(String[] args) {
 		createLinkedList();
 		AddThreeNumbers();
@@ -119,5 +142,6 @@ public class LinkedMain {
 		insertBtwPosition();
 		deleteFirstNode();
 		deleteLastElement();
+		searchElement();
 	}
 }
