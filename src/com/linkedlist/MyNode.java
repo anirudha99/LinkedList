@@ -33,7 +33,7 @@ public class MyNode<K> implements INode<K> {
 	@Override
 	public String toString() {
 		StringBuilder nodeString = new StringBuilder();
-		nodeString.append("MyNodes {" + "key=").append(key).append('}');
+		nodeString.append("MyNodes {" + "key = ").append(key).append('}');
 		if(next != null) {
 			nodeString.append("->").append(next);
 		}
