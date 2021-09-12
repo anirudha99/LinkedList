@@ -60,9 +60,27 @@ public class LinkedMain {
 		
 	}
 	
+	public static void insertBtwPosition() {
+		MyNode<Integer> firstNode = new MyNode<>(56);
+		MyNode<Integer> secondNode = new MyNode<>(30);
+		MyNode<Integer> thirdNode = new MyNode<>(70);
+		
+		LinkedListTE<Integer> Linkedlist = new LinkedListTE<>();
+		Linkedlist.add(firstNode);
+		Linkedlist.append(thirdNode);
+		Linkedlist.insert(firstNode,secondNode);
+		if(Linkedlist.head.equals(firstNode) && Linkedlist.head.getNext().equals(secondNode) && Linkedlist.tail.equals(thirdNode)){
+			Linkedlist.printMyNodes();	
+		}else {
+			System.out.println("Error");
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		createLinkedList();
 		AddThreeNumbers();
 		AppendThreeNumbers();
+		insertBtwPosition();
 	}
 }
