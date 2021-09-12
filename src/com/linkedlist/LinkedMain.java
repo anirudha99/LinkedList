@@ -135,6 +135,32 @@ public class LinkedMain {
 		Linkedlist.printMyNodes();
 	}
 	
+	/**
+	 * To add element at a specific position in linked list
+	 */
+	public static void addafterSpecifiedNode() {
+		MyNode<Integer> firstNode = new MyNode<>(56);
+		MyNode<Integer> secondNode = new MyNode<>(30);
+		MyNode<Integer> thirdNode = new MyNode<>(70);
+		MyNode<Integer> fourthNode = new MyNode<>(40);
+
+		LinkedListTE<Integer> Linkedlist = new LinkedListTE<Integer>();
+		Linkedlist.add(firstNode);
+		Linkedlist.append(secondNode);
+		Linkedlist.append(thirdNode);
+		INode<Integer> temp = Linkedlist.search(30);
+		if(temp != null) {
+			INode<Integer> next = temp.getNext();
+			temp.setNext(fourthNode);
+			fourthNode.setNext(next);
+		}else {
+			System.out.println("Element not found");
+		}
+		Linkedlist.printMyNodes();
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		createLinkedList();
 		AddThreeNumbers();
@@ -143,5 +169,6 @@ public class LinkedMain {
 		deleteFirstNode();
 		deleteLastElement();
 		searchElement();
+		addafterSpecifiedNode();
 	}
 }
