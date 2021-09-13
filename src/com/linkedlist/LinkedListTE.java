@@ -11,6 +11,8 @@ public class LinkedListTE<K> {
 	}
 	
 	/**
+	 * method to add
+	 * calls sort function
 	 * @param newNode
 	 */
 	public void add(INode<K> newNode) {
@@ -24,10 +26,12 @@ public class LinkedListTE<K> {
 			INode<K> tempNode = this.head;
 			this.head = newNode;
 			this.head.setNext(tempNode);
+			sort();
 		}
 	}
 	
 	/**
+	 * To append between nodes
 	 * @param newNode
 	 */
 	public void append(INode<K> newNode) {
@@ -92,6 +96,10 @@ public class LinkedListTE<K> {
 		return null;
 	}
 	
+	/**
+	 * @param Key
+	 * @return deleted node
+	 */
 	public INode<K> deleteSpecified(K Key) {
 		if(head == null || head.getNext() == null) {
 			return null;
@@ -113,6 +121,11 @@ public class LinkedListTE<K> {
 		return head;
 	}
 	
+	/**
+	 * method to count
+	 * @param head
+	 * @return count
+	 */
 	public int countNode(INode<K> head) {
 		INode<K> tempNode = head;
 		if(tempNode == null)
@@ -127,7 +140,41 @@ public class LinkedListTE<K> {
 		return count;
 
 	}
+	
+	/**
+	 * To sort the values in ascending order
+	 */
+	private void sort() 
+	{
+		INode<K>current = this.head;
+		INode<K>index = null;
+		K temp;
+		if(this.head == null) {
+			System.out.println("List is empty");
+		}
+		else {
+			while(current != null)
+			{
+				//Node index will point to node next to current
+				index = current.getNext();
+				while(index != null) {
+					//If current node's data is greater than index's node data, swap the data between them
+					if((int)current.getKey()>(int)index.getKey()){
+						temp = current.getKey();
+						current.setKey(index.getKey());
+						index.setKey(temp);
+					}
+					index = index.getNext();
+	                }
+	                current = current.getNext();
+			}  		
+		}
+		
+	}
 
+	/**
+	 * method to print
+	 */
 	public void printMyNodes() {
 		System.out.println("My Nodes: "+head);
 	}

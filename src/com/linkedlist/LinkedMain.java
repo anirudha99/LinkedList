@@ -22,6 +22,7 @@ public class LinkedMain {
 	
 	/**
 	 * To add 3 nodes to the top of linked list
+	 * Calls sort function while adding
 	 */
 	public static void AddThreeNumbers() {
 		MyNode<Integer> firstNode = new MyNode<>(70);
