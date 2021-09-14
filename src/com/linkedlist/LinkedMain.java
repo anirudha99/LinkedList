@@ -180,6 +180,18 @@ public class LinkedMain {
 		Linkedlist.printMyNodes();
 	}
 	
+	/**
+	 * Method to create ordered linked list while adding
+	 */
+	public static void orderedLinkedList() {
+		OrderedLinkedList orderedList = new OrderedLinkedList();
+		orderedList.add(56);
+		orderedList.add(30);
+		orderedList.add(40);
+		orderedList.add(72);
+		System.out.println("Ordered list is");
+		orderedList.print();
+	}
 	
 	
 	public static void main(String[] args) {
@@ -192,5 +204,6 @@ public class LinkedMain {
 		searchElement();
 		addafterSpecifiedNode();
 		deleteafterSpecifiedNode();
+		orderedLinkedList();
 	}
 }
